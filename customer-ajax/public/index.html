@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html data-ng-app="CustomerModule">
+    <head>
+        <title>Create Customer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/customer.js"></script>
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+        <style>
+            body,h1 {font-family: "Raleway", sans-serif}
+            body, html {height: 100%}
+            .bgimg {
+                background-image: url("forestbridge.jpg");
+                min-height: 100%;
+                background-position: center;
+                background-size: cover;
+            }
+            input[type=text], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+                width: 100%;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+            div {
+                border-radius: 5px;
+                padding: 20px;
+            }
+            .button {
+                background-color: transparent;
+                color: black;
+                border: 2px solid #e7e7e7;
+                text-align: center;
+                font-size: 18px;
+                padding: 10px;
+                width: 300px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+            }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+
+            .button:hover span {
+                padding-right: 25px;
+            }
+
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+            .align-center {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+            <div class="w3-display-topleft w3-padding-large w3-xlarge">
+                Customer Portal
+            </div>
+            <div class="w3-display-middle w3-text-white w3-large" data-ng-controller="CustomerController as custCtrl">
+                <h1>Add a New Customer</h1>
+                <fieldset>
+                    <form data-ng-submit="custCtrl.addCustomer(customer)">
+                        <label>Username:</label>
+                        <input type="text" data-ng-model="customer.userName">
+                        <label>First Name:</label>
+                        <input type="text" data-ng-model="customer.firstName">
+                        <label>Last Name:</label>
+                        <input type="text" data-ng-model="customer.lastName">
+                        <label>Email:</label>
+                        <input type="text" style="margin: 10px 0px 20px 0px" data-ng-model="customer.email">
+                        <button class="button w3-text-white align-center"><span>Add New Customer</span></button>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </body>
+</html>

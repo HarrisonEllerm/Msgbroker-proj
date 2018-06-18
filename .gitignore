@@ -1,0 +1,7 @@
+.gradle
+.nb-gradle
+/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+Config.java
