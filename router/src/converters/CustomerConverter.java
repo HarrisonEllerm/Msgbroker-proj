@@ -13,10 +13,12 @@ import domain.Customer;
  */
 public class CustomerConverter {
     
+    private String vendCustCode = "0afa8de1-147c-11e8-edec-2b197906d816";
+    
     public Customer createCustomer(String firstName, String lastName,
             String email, String customField1) {
         return new Customer(firstName, lastName, email, 
-                "0afa8de1-147c-11e8-edec-2b197906d816", customField1);
+                vendCustCode, customField1);
     }
-    
+   
 }
